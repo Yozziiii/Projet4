@@ -93,12 +93,6 @@ body {
 #gallery {
 	/*	min-height: 100vh; */
 }
-
-.visually-hidden {
-	color: #000;
-	background: #fff;   
-}
-
 .title{
 	text-align: center;
 	padding-block: 2em;

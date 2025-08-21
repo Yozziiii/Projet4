@@ -114,11 +114,10 @@
       }
     },
     openLightBox(element, lightboxId) {
-      const modalEl = document.getElementById(lightboxId);
-      modalEl.querySelector(".lightboxImage").src = element.attr("src");
-
-      const modal = new bootstrap.Modal(modalEl);
-      modal.show();
+      $(`#${lightboxId}`)
+        .find(".lightboxImage")
+        .attr("src", element.attr("src"));
+      $(`#${lightboxId}`).modal("toggle");
     },
     prevImage() {
       let activeImage = null;
@@ -158,6 +157,7 @@
       prevIndex = index - 1 
       if (prevIndex < 0){
         prevIndex = imagesCollection.length - 1;
+        console.log("prev: " + prevIndex)
       }
       next = imagesCollection[prevIndex]
 
